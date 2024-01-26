@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
-    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
     <h1>Grocery List</h1>
-
     <section id="create">
         <h2>Añadir un producto</h2>
+        <form action="" method="" id="product-form">
+            <label for="new-name">Producto: </label><input id="new-name" type="text"></form>
+            <label for="new-quantity">Cantidad: </label><input id="new-quantity" type="number" min="0"></form>
+            <button type="submit" onclick="addProduct()">Añadir</button>
+        </form>
     </section>
     <section id="list">
         <h2>Productos añadidos</h2>
         <button onclick="viewList()">Mostrar</button>
     </section>
-    <script src="/src/script.js"></script>
+    <script src="./src/script.js"></script>
 </body>
 </html>

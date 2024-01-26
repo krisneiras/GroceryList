@@ -28,4 +28,20 @@ async function deleteProduct(id){
 
 //POST
 
+
+async function addProduct(){
+/*     const newProduct = document.getElementById("product-form");
+    console.log(newProduct.elements[0].value);
+     */
+    const result = await fetch(`http://localhost:3000/products/`, 
+    {method: "POST",
+    headers: {"Content-type": "application/json"},   
+    body: `{
+        "name": "Leche",
+        "quantity": 1 
+    }`
+});
+    return result;
+}
+
 //PUT

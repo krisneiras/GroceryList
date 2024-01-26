@@ -3,16 +3,12 @@
         {
             "id": "1",
             "name": "Manzana",
-            "price": 2,
-            "quantity": 5,
-            "type": "Frutas" 
+            "quantity": 5
         },
         {
             "id": "2",
             "name": "Patatas",
-            "price": 1,
-            "quantity": 7,
-            "type": "Verduras" 
+            "quantity": 7
         }
     ]
 }
