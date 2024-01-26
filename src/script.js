@@ -1,12 +1,13 @@
 let listTag = document.getElementById("list");
 
-// READ
+// READ - GET
 /* async function getList() {
     const result = await ("http://localhost:3000/products");
     const data = await result.json();
     return data;
-}
- */
+}*/
+
+// PRINT
 async function viewList() {
     const result = await fetch("http://localhost:3000/products");
     const products = await result.json();
@@ -18,26 +19,24 @@ async function viewList() {
     })
     return products;
 }
+
 //DELETE
 async function deleteProduct(id) {
     const result = await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
     return result;
 }
 
-//POST
-
-
+//CREATE - POST
 async function addProduct() {
-    /*const newProduct = document.getElementById("product-form");
-    console.log(newProduct.elements[0].value);*/
+    const newProduct = document.getElementById("product-form");
 
     const result = await fetch(`http://localhost:3000/products/`,
         {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: `{
-                "name": "Leche",
-                "quantity": 1 
+                "name": "${newProduct.elements[0].value}",
+                "quantity": ${newProduct.elements[1].value} 
             }`
         });
     return result;
