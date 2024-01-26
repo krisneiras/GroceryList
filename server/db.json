@@ -6,6 +6,13 @@
             "price": 2,
             "quantity": 5,
             "type": "Frutas" 
+        },
+        {
+            "id": "2",
+            "name": "Patatas",
+            "price": 1,
+            "quantity": 7,
+            "type": "Verduras" 
         }
     ]
 }

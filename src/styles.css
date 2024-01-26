@@ -6,3 +6,6 @@ body{
 
 
 /*Section List */
+.delete-button{
+    background-color: red;
+}
