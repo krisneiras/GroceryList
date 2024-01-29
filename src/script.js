@@ -11,12 +11,15 @@ let listTag = document.getElementById("list");
 async function viewList() {
     const result = await fetch("http://localhost:3000/products");
     const products = await result.json();
+    listTag.innerHTML = "";
     products.map(product => {
         listTag.innerHTML +=
-            `<h3>${product.name}</h3>
-            <p>Cantidad:${product.quantity}</p> 
-            <button onclick="modifyProduct('${product.id}')">Editar</button>
-            <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>`
+            `<li id="${product.id}">
+                <h3>${product.name}</h3>
+                <p>Cantidad:${product.quantity}</p> 
+                <button onclick="modifyProduct('${product.id}')">Editar</button>
+                <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>
+            </li>`
     })
     return products;
 }
