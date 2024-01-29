@@ -2,13 +2,18 @@
   "products": [
     {
       "name": "Manzana",
-      "quantity": 3,
+      "quantity": 4,
       "id": "1"
     },
     {
       "name": "Patatas",
       "quantity": 5,
       "id": "2"
+    },
+    {
+      "id": "5f0c",
+      "name": "Manzana",
+      "quantity": 2
     }
   ]
 }
