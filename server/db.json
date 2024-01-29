@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "id": "1",
       "name": "Manzana",
-      "quantity": 5
+      "quantity": 3,
+      "id": "1"
     },
     {
-      "id": "2",
       "name": "Patatas",
-      "quantity": 7
+      "quantity": 5,
+      "id": "2"
     }
   ]
 }

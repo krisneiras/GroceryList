@@ -13,8 +13,9 @@ async function viewList() {
     const products = await result.json();
     products.map(product => {
         listTag.innerHTML +=
-            `<h3>${product.name}</h3> 
-            <button>Editar</button>
+            `<h3>${product.name}</h3>
+            <p>Cantidad:${product.quantity}</p> 
+            <button onclick="modifyProduct('${product.id}')">Editar</button>
             <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>`
     })
     return products;
@@ -43,3 +44,18 @@ async function addProduct() {
 }
 
 //PUT
+
+async function modifyProduct(id) {
+    const newProduct = document.getElementById("product-form");
+
+    const result = await fetch(`http://localhost:3000/products/${id}`,
+        {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: `{
+                "name": "${newProduct.elements[0].value}",
+                "quantity": ${newProduct.elements[1].value} 
+            }`
+        });
+    return result;
+}
