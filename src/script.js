@@ -16,8 +16,8 @@ async function viewList() {
         listTag.innerHTML +=
             `<li id="product-${product.id}">
                 <h3>${product.name}</h3>
-                <p>Cantidad:${product.quantity}</p> 
-                <button id="edit-button" onclick="displayForm('${product.id}')">Editar</button>
+                <p>Cantidad: ${product.quantity}</p> 
+                <button id="edit-button" onclick="displayForm('${product.id}', '${product.name}', ${product.quantity})">Editar</button>
                 <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>
             </li>`
     })
@@ -48,12 +48,12 @@ async function addProduct() {
 
 //PUT
 
-async function displayForm(id) {
+async function displayForm(id, name, quantity) {
 
-    document.getElementById(`product-${id}`).innerHTML= `
+    listTag.innerHTML= `
     <form action="" method="" id="modify-form">
-    <label for="modify-name">Producto: </label><input id="modify-name" name="name" type="text">
-    <label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" min="0">
+    <h3><input id="modify-name" name="name" type="text" value="${name}"></h3>
+    <p><label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" value="${quantity}" min="0"></p>
     <button type="submit" onclick="modifyProduct('${id}')">Guardar</button>
     <button class="cancel-button">Cancelar</button>
 </form>`
