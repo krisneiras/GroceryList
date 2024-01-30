@@ -1,4 +1,8 @@
-let listTag = document.getElementById("list");
+const listTag = document.getElementById("list");
+const formTag = document.getElementById("form");
+document.querySelector(".cancel-button").addEventListener(
+    'click', () => false
+)
 
 // READ - GET
 /* async function getList() {
@@ -12,27 +16,32 @@ async function viewList() {
     const result = await fetch("http://localhost:3000/products");
     const products = await result.json();
     listTag.innerHTML = "";
+    formTag.innerHTML = "";
     products.map(product => {
         listTag.innerHTML +=
-            `<li id="product-${product.id}">
+            `<article>
                 <h3>${product.name}</h3>
                 <p>Cantidad: ${product.quantity}</p> 
                 <button id="edit-button" onclick="displayForm('${product.id}', '${product.name}', ${product.quantity})">Editar</button>
                 <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>
-            </li>`
-    })
+            </article>`
+    })    
     return products;
 }
 
-//DELETE
-async function deleteProduct(id) {
-    const result = await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
-    return result;
+// CREATE - POST
+function addForm(){
+    formTag.innerHTML =
+    `<form action="" method="" id="add-form">
+        <p><label for="add-name">Producto: </label><input id="add-name" name="name" type="text" value=""></h3></p>
+        <p><label for="add-quantity">Cantidad: </label><input id="add-quantity" name="quantity" type="number" value="" min="0"></p>
+        <button type="submit" onclick="addProduct()">Añadir</button>
+        <button class="cancel-button">Cancelar</button>
+    </form>`
 }
 
-//CREATE - POST
 async function addProduct() {
-    const newProduct = document.getElementById("product-form");
+    const newProduct = document.getElementById("add-form");
 
     const result = await fetch(`http://localhost:3000/products/`,
         {
@@ -46,21 +55,20 @@ async function addProduct() {
     return result;
 }
 
-//PUT
-
+// UPDATE - PUT
 async function displayForm(id, name, quantity) {
-
-    listTag.innerHTML= `
+    formTag.innerHTML= `
+    <h3>Editando...</h3>
     <form action="" method="" id="modify-form">
-    <h3><input id="modify-name" name="name" type="text" value="${name}"></h3>
-    <p><label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" value="${quantity}" min="0"></p>
-    <button type="submit" onclick="modifyProduct('${id}')">Guardar</button>
-    <button class="cancel-button">Cancelar</button>
-</form>`
-
+        <p><label for="add-name">Producto: </label><input id="modify-name" name="name" type="text" value="${name}"></p>
+        <p><label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" value="${quantity}" min="0"></p>
+        <button type="submit" onclick="modifyProduct('${id}')">Guardar</button>
+        <button class="cancel-button">Cancelar</button>
+    </form>`;
+    listTag.innerHTML= "";
 }
 
-  async function modifyProduct(id) {
+async function modifyProduct(id) {
     const modifyProduct = document.getElementById("modify-form");
 
     const result = await fetch(`http://localhost:3000/products/${id}`,
@@ -75,10 +83,11 @@ async function displayForm(id, name, quantity) {
     return result;
 }
 
-
-document.querySelector(".cancel-button").addEventListener(
-    'click', () => listTag.innerHTML = ""
-)
+//DELETE
+async function deleteProduct(id) {
+    const result = await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
+    return result;
+}
 
 /* const editButton = document.getElementById('edit-button');
 

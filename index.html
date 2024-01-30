@@ -10,20 +10,15 @@
 
 <body>
     <h1>Grocery List</h1>
-    <section id="create">
-        <h2>Añadir un producto</h2>
-        <form action="" method="" id="product-form">
-            <label for="new-name">Producto: </label><input id="new-name" name="name" type="text">
-            <label for="new-quantity">Cantidad: </label><input id="new-quantity" name="quantity" type="number" min="0">
-            <button type="submit" onclick="addProduct()">Añadir</button>
-        </form>
+    <div>
+        <button onclick="viewList()">Mostrar lista</button>
+        <button onclick="addForm()">Añadir producto</button>
+    </div>
+    <section id="form">
+
     </section>
-    <section>
-        <h2>Productos añadidos</h2>
-        <button onclick="viewList()">Mostrar</button>
-        <ul id="list">
-            
-        </ul>
+    <section id="list">
+
     </section>
     <script src="./src/script.js"></script>
 </body>

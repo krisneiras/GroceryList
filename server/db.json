@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "Manzana",
+      "name": "Manzanas",
       "quantity": 4,
       "id": "1"
     },
@@ -9,6 +9,11 @@
       "name": "Patatas",
       "quantity": 5,
       "id": "2"
+    },
+    {
+      "name": "Leche",
+      "quantity": 3,
+      "id": "a0e9"
     }
   ]
 }
