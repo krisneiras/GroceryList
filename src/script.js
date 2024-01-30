@@ -20,7 +20,7 @@ async function viewList() {
     products.map(product => {
         listTag.innerHTML +=
             `<article>
-                <h3>${product.name}</h3>
+                <h3><label>${product.name}<input type="checkbox"></label></h3>
                 <p>Cantidad: ${product.quantity}</p> 
                 <button id="edit-button" onclick="displayForm('${product.id}', '${product.name}', ${product.quantity})">Editar</button>
                 <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>
@@ -85,8 +85,10 @@ async function modifyProduct(id) {
 
 //DELETE
 async function deleteProduct(id) {
-    const result = await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
-    return result;
+    if(confirm("¿Estás seguro que quieres eliminar este producto?") === true){
+        const result = await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
+        return result;
+    }
 }
 
 /* const editButton = document.getElementById('edit-button');
