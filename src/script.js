@@ -22,8 +22,8 @@ async function viewList() {
             `<article>
                 <h3><label>${product.name}<input type="checkbox"></label></h3>
                 <p>Cantidad: ${product.quantity}</p> 
-                <button id="edit-button" onclick="displayForm('${product.id}', '${product.name}', ${product.quantity})">Editar</button>
-                <button class="delete-button" onclick="deleteProduct('${product.id}')">Eliminar</button>
+                <button id="edit-button" onclick="displayForm('${product.id}', '${product.name}', ${product.quantity})">📝</button>
+                <button class="delete-button" onclick="deleteProduct('${product.id}')">❌</button>
             </article>`
     })    
     return products;
