@@ -50,11 +50,12 @@ async function addProduct() {
 
 async function displayForm(id) {
 
-    document.getElementById(`product-${id}`).innerHTML+= `
+    document.getElementById(`product-${id}`).innerHTML= `
     <form action="" method="" id="modify-form">
     <label for="modify-name">Producto: </label><input id="modify-name" name="name" type="text">
     <label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" min="0">
     <button type="submit" onclick="modifyProduct('${id}')">Guardar</button>
+    <button class="cancel-button">Cancelar</button>
 </form>`
 
 }
@@ -73,6 +74,11 @@ async function displayForm(id) {
         });
     return result;
 }
+
+
+document.querySelector(".cancel-button").addEventListener(
+    'click', () => listTag.innerHTML = ""
+)
 
 /* const editButton = document.getElementById('edit-button');
 
