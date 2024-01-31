@@ -1,4 +1,4 @@
-#Practica ***CRUD**
+# Practica **CRUD**
 
 Se nos asignó una practica en la cual tendriamos que crear una base de datos sencilla con JSON, haciendo uso del CRUD.
 Cada sigla hace referencia a una operación:
