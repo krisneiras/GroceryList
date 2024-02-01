@@ -33,8 +33,8 @@ async function viewList() {
 function addForm(){
     formTag.innerHTML =
     `<form action="" method="" id="add-form">
-        <p><label for="add-name">Producto: </label><input id="add-name" name="name" type="text" value=""></h3></p>
-        <p><label for="add-quantity">Cantidad: </label><input id="add-quantity" name="quantity" type="number" value="" min="0"></p>
+        <p><label for="add-name">Producto: </label><input id="add-name" name="name" type="text" value="" required></h3></p>
+        <p><label for="add-quantity">Cantidad: </label><input id="add-quantity" name="quantity" type="number" value="" min="0" required></p>
         <button type="submit" onclick="addProduct()">Añadir</button>
         <button class="cancel-button">Cancelar</button>
     </form>`
