@@ -29,7 +29,7 @@ Para esta practica decidimos crear una lista de la compra, donde puedes **Mostra
 ## Cómo usar
 Clona este repositorio en tu terminal :
 + $ git clone https://github.com/krisneiras/GroceryList
-+ $ npm istall
++ $ npm install
 + $ npm run api
 
 Luego abra el archivo index.html en tu navegador.
