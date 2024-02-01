@@ -60,8 +60,8 @@ async function displayForm(id, name, quantity) {
     formTag.innerHTML= `
     <h3>Editando...</h3>
     <form action="" method="" id="modify-form">
-        <p><label for="add-name">Producto: </label><input id="modify-name" name="name" type="text" value="${name}"></p>
-        <p><label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" value="${quantity}" min="0"></p>
+        <p><label for="add-name">Producto: </label><input id="modify-name" name="name" type="text" value="${name}" required></p>
+        <p><label for="modify-quantity">Cantidad: </label><input id="modify-quantity" name="quantity" type="number" value="${quantity}" min="0" required></p>
         <button type="submit" onclick="modifyProduct('${id}')">Guardar</button>
         <button class="cancel-button">Cancelar</button>
     </form>`;
