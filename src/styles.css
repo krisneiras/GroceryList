@@ -18,6 +18,11 @@ main{
     padding: 20px;
 }
 
+.main-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .delete-button{
     background-color: red;
 }
@@ -26,4 +31,5 @@ button{
     border-radius: 5px;
     font-family: 'Ruda', sans-serif;
     padding: 3px;
+    cursor: pointer;
 }
