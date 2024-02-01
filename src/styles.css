@@ -32,4 +32,6 @@ button{
     font-family: 'Ruda', sans-serif;
     padding: 3px;
     cursor: pointer;
+    height: 30px;
+    min-width: 30px;
 }
